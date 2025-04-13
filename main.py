@@ -1,12 +1,23 @@
-"""Entry point for the Code Project Generator.
+"""Entry point for the Python CLI AI Coder.
 
-NOTE: This application requires a virtual environment.
-Before running, make sure to activate the virtual environment:
+This is the main entry point for the application that generates complete project
+structures based on user specifications. The tool provides an interactive CLI
+interface for selecting project types, features, and configurations.
 
-    source .venv/bin/activate  # On Unix/Mac
-    .venv/Scripts/activate     # On Windows
+Requirements:
+    - Python 3.8+
+    - OpenAI API key (set in .env file)
+    - Virtual environment (recommended)
 
-Then run the application with:
+Before running:
+    1. Make sure to activate the virtual environment:
+       source .venv/bin/activate  # On Unix/Mac
+       .venv\Scripts\activate     # On Windows
+
+    2. Ensure your .env file contains your OpenAI API key:
+       OPENAI_API_KEY=your_api_key_here
+
+Usage:
     python main.py
 """
 import os
@@ -16,8 +27,12 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-# Check if running in virtual environment
 def is_venv():
+    """Check if the application is running in a virtual environment.
+
+    Returns:
+        bool: True if running in a virtual environment, False otherwise
+    """
     return hasattr(sys, 'real_prefix') or \
         (hasattr(sys, 'base_prefix') and sys.base_prefix != sys.prefix)
 

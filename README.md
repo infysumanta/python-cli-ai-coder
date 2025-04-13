@@ -2,6 +2,11 @@
 
 A powerful command-line tool that leverages artificial intelligence to generate complete project structures, add new features to existing projects, and streamline your development workflow.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+
+> **Python CLI AI Coder** helps developers quickly bootstrap new projects with well-structured codebases, proper configuration files, and best practices already implemented. Save hours of setup time and focus on building your application's unique features.
+
 ## ✨ Features
 
 - **Project Generation**: Create complete project structures for various frameworks and languages
@@ -84,23 +89,68 @@ Run the project generator:
 python main.py
 ```
 
-Follow the interactive prompts to:
+<details>
+<summary><b>Interactive Workflow (click to expand)</b></summary>
 
-1. Select a project type
-2. Enter a project name
-3. Choose a directory to store the project
-4. Provide a project description
-5. Select optional features (Git, Tests, GitHub Actions, Documentation)
+1. **Select a project type** from the available options:
 
-The tool will generate a complete project structure based on your specifications.
+   - Python
+   - JavaScript
+   - TypeScript
+   - React + Vite (TypeScript or JavaScript)
+   - Express (TypeScript or JavaScript)
+   - Custom (specify your own)
+
+2. **Enter a project name** that will be used for the project directory and in generated files
+
+3. **Choose a directory** to store the project (defaults to `projects/your_project_name`)
+
+4. **Provide a project description** that will be used to generate appropriate code and documentation
+
+5. **Select optional features**:
+
+   - 🔀 **Git Initialization**: Initialize a Git repository with appropriate .gitignore
+   - 🚨 **Testing Framework**: Add testing framework with sample tests
+   - 🛠️ **GitHub Actions**: Set up CI/CD workflows
+   - 📝 **Documentation**: Create documentation structure and templates
+
+6. **Confirm and generate** your project structure
+
+7. **View the summary** of generated files and directories
+</details>
+
+The tool will generate a complete project structure based on your specifications, with proper file organization, configuration files, and boilerplate code.
 
 ### Add Features to an Existing Project
 
-After generating a project, you can add new features:
+After generating a project, you can add new features to extend its functionality:
 
-1. Select "Yes" when asked if you want to add features
-2. Describe the feature you want to add
-3. The tool will analyze your project and implement the new feature
+```bash
+# After project generation completes, you'll be prompted to add features
+# Or run the tool again and navigate to the existing project directory
+python main.py
+```
+
+<details>
+<summary><b>Feature Addition Workflow (click to expand)</b></summary>
+
+1. **Select "Yes"** when asked if you want to add features to the project
+
+2. **Describe the feature** you want to add in natural language, for example:
+
+   - "Add a user authentication system with login and registration"
+   - "Create a database connection module with SQLAlchemy"
+   - "Add a REST API endpoint for user profiles"
+   - "Implement a logging system with rotating file handlers"
+
+3. **Watch as the tool analyzes** your project structure and implements the feature
+
+4. **Review the changes** made to your project files
+
+5. **Optionally add more features** by selecting "Yes" when prompted
+</details>
+
+The tool will intelligently analyze your existing project structure and implement the requested feature with appropriate code, tests, and documentation updates.
 
 ## ⚙️ Configuration Options
 
@@ -111,41 +161,62 @@ After generating a project, you can add new features:
   - **GitHub Actions**: Set up CI/CD workflows
   - **Documentation**: Create documentation structure and templates
 
-### Tool Calls
+### Technical Implementation
 
-The ProjectGenerator class defines tools that AI Coder can call:
+The Python CLI AI Coder uses a tool-based approach to generate project structures:
 
-- `read_file`: Read the contents of a file
-- `get_file_metadata`: Get metadata for a file
-- `list_directory_contents`: List files and directories
-- `write_to_file`: Write content to a file
-- `create_directory`: Create a new directory
-- `run_command`: Execute a shell command
+<details>
+<summary><b>AI Tool System (click to expand)</b></summary>
+
+The `ProjectGenerator` class defines a set of tools that the AI model can call to manipulate files and directories:
+
+| Tool                      | Description                 | Usage                                |
+| ------------------------- | --------------------------- | ------------------------------------ |
+| `read_file`               | Read the contents of a file | Used to analyze existing files       |
+| `get_file_metadata`       | Get metadata for a file     | Used to check file properties        |
+| `list_directory_contents` | List files and directories  | Used to understand project structure |
+| `write_to_file`           | Write content to a file     | Used to create or update files       |
+| `create_directory`        | Create a new directory      | Used to create folder structure      |
+| `run_command`             | Execute a shell command     | Used to run initialization commands  |
+
+These tools are exposed to the AI model through a function-calling interface, allowing it to manipulate the filesystem in a controlled and secure manner.
+
+</details>
+
+This architecture enables the AI to generate complex project structures while maintaining security and control over the operations performed.
 
 ## How It Works
 
-1. **Initialization**:
+<img src="https://via.placeholder.com/800x400.png?text=Python+CLI+AI+Coder+Workflow" alt="Python CLI AI Coder Workflow Diagram" width="100%">
+
+1. **Initialization** 🚀
 
    - The tool loads the OpenAI API key from the `.env` file
-   - It initializes the ProjectGenerator class with this key
+   - It initializes the `ProjectGenerator` class with this key
+   - The system prepares the available tools for AI to use
 
-2. **User Input**:
+2. **User Input Collection** 💬
 
-   - The CLI collects project specifications from the user
-   - Users select project type, name, description, and features
+   - The CLI presents an interactive interface with colorful prompts
+   - Users select project type, name, location, and description
+   - Users customize project features through a visual selection interface
+   - All selections are validated and confirmed before proceeding
 
-3. **Project Generation**:
+3. **Project Generation Process** ⚙️
 
-   - The tool sends prompts to GPT-4o with project specifications
-   - GPT-4o responds with tool calls to create files and directories
-   - The tool executes these calls to build the project structure
-   - Progress is displayed in real-time
+   - The system crafts detailed prompts for the AI model with project specifications
+   - The AI model (GPT-4o) analyzes the requirements and plans the project structure
+   - The AI makes tool calls to create directories, files, and execute commands
+   - The system executes these calls and provides real-time visual feedback
+   - A comprehensive project structure is built according to best practices
 
-4. **Feature Addition**:
-   - Users can describe features to add to the generated project
-   - The tool analyzes the project structure
-   - AI generates code to implement the feature
-   - The tool integrates the new code into the project
+4. **Feature Addition Capability** 🔍
+
+   - Users can request new features in natural language
+   - The AI analyzes the existing project structure to understand the codebase
+   - The system determines the necessary changes to implement the feature
+   - Files are modified or created to add the requested functionality
+   - Tests and documentation are updated to reflect the new features
 
 ## 📦 Dependencies
 

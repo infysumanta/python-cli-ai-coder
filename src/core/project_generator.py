@@ -1,5 +1,17 @@
 """
-Project generator core functionality.
+Project Generator core module for the Python CLI AI Coder.
+
+This module contains the ProjectGenerator class, which is the central component
+of the application responsible for generating project structures using OpenAI's
+GPT models. The class provides methods for:
+
+1. Generating complete project structures based on user specifications
+2. Adding new features to existing projects
+3. Generating project documentation (README.md)
+4. Handling AI tool calls for file and directory operations
+
+The ProjectGenerator interfaces with OpenAI's API and uses a set of tools
+to create files, directories, and execute commands as directed by the AI model.
 """
 import os
 import json
@@ -18,10 +30,20 @@ from src.utils.command_operations import run_command
 class ProjectGenerator:
     def __init__(self, api_key):
         """
-        Initializes the project generator with OpenAI API key.
+        Initialize the ProjectGenerator with an OpenAI API key.
+
+        This constructor sets up the OpenAI client and defines the available tools
+        that can be used by the AI model to generate project structures. These tools
+        include file operations, directory management, and command execution.
 
         Args:
-            api_key (str): OpenAI API key
+            api_key (str): OpenAI API key for authentication with the OpenAI service
+
+        Attributes:
+            client (OpenAI): Initialized OpenAI client
+            available_tools (list): List of tools available to the AI model
+            messages (list): Conversation history for the AI model
+            project_name (str): Name of the current project being generated
         """
         self.client = OpenAI(api_key=api_key)
         self.available_tools = [

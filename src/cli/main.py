@@ -1,5 +1,21 @@
 """
-Command-line interface for the project generator.
+Command-line interface module for the Python CLI AI Coder.
+
+This module provides the interactive CLI interface for the project generator,
+allowing users to specify project types, names, descriptions, and features.
+It uses the Rich library to create a visually appealing interface with
+colorful text, progress bars, tables, and interactive prompts.
+
+The main function in this module is `main()`, which is the entry point for
+the CLI interface. It handles user input, displays progress, and calls the
+ProjectGenerator to generate project structures.
+
+Features:
+- Interactive project type selection
+- Project feature customization (Git, Tests, GitHub Actions, Documentation)
+- Visual progress tracking with spinners and progress bars
+- Detailed project summary display
+- Feature addition to existing projects
 """
 import os
 import json
@@ -96,7 +112,22 @@ PROJECT_FEATURES = {
 
 def main():
     """
-    Main function that takes input from the terminal and runs the generator.
+    Main entry point for the CLI interface.
+
+    This function handles the complete workflow of the project generator:
+    1. Collects user input for project specifications
+    2. Sets up the project directory
+    3. Initializes the ProjectGenerator
+    4. Displays progress during project generation
+    5. Shows a summary of the generated project
+    6. Optionally adds features to the existing project
+
+    The function uses Rich library components to create a visually appealing
+    and interactive interface with colorful text, tables, progress bars, and
+    status indicators.
+
+    Returns:
+        None
     """
     # Display a simpler header
     console.print("\n[bold cyan]GPT-4o PROJECT GENERATOR[/bold cyan]")

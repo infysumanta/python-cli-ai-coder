@@ -1,5 +1,12 @@
 """
-Command execution functions.
+Command execution utility functions for the Python CLI AI Coder.
+
+This module provides utility functions for safely executing shell commands
+as part of the project generation process. It includes safety checks to
+prevent potentially dangerous operations (like using sudo).
+
+The main function in this module is `run_command()`, which executes shell
+commands in a controlled environment and returns their output.
 """
 import os
 import subprocess
@@ -8,10 +15,10 @@ import subprocess
 def is_safe_command(command):
     """
     Checks if a command is safe to execute (no sudo).
-    
+
     Args:
         command (str): Command to check
-        
+
     Returns:
         bool: True if command is safe, False otherwise
     """
@@ -24,10 +31,10 @@ def is_safe_command(command):
 def run_command(command):
     """
     Runs a terminal command in the current working directory, without sudo.
-    
+
     Args:
         command (str): Command to run
-        
+
     Returns:
         dict: Dictionary with 'stdout', 'stderr', and 'returncode' if successful
         None: If command contains sudo or other error occurs
@@ -35,7 +42,7 @@ def run_command(command):
     if not is_safe_command(command):
         print("Error: Cannot run commands with 'sudo'.")
         return None
-    
+
     try:
         # Run the command and capture output
         process = subprocess.Popen(
@@ -46,10 +53,10 @@ def run_command(command):
             text=True,
             cwd=os.getcwd()  # Ensure command runs in current working directory
         )
-        
+
         # Get output
         stdout, stderr = process.communicate()
-        
+
         return {
             'stdout': stdout,
             'stderr': stderr,
