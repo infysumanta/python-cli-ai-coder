@@ -89,8 +89,7 @@ Run the project generator:
 python main.py
 ```
 
-<details>
-<summary><b>Interactive Workflow (click to expand)</b></summary>
+### Interactive Workflow
 
 1. **Select a project type** from the available options:
 
@@ -117,11 +116,8 @@ python main.py
 6. **Confirm and generate** your project structure
 
 7. **View the summary** of generated files and directories
-</details>
 
-The tool will generate a complete project structure based on your specifications, with proper file organization, configuration files, and boilerplate code.
-
-### Add Features to an Existing Project
+### Feature Addition
 
 After generating a project, you can add new features to extend its functionality:
 
@@ -131,8 +127,7 @@ After generating a project, you can add new features to extend its functionality
 python main.py
 ```
 
-<details>
-<summary><b>Feature Addition Workflow (click to expand)</b></summary>
+### Feature Addition Workflow
 
 1. **Select "Yes"** when asked if you want to add features to the project
 
@@ -148,9 +143,6 @@ python main.py
 4. **Review the changes** made to your project files
 
 5. **Optionally add more features** by selecting "Yes" when prompted
-</details>
-
-The tool will intelligently analyze your existing project structure and implement the requested feature with appropriate code, tests, and documentation updates.
 
 ## ⚙️ Configuration Options
 
@@ -165,8 +157,7 @@ The tool will intelligently analyze your existing project structure and implemen
 
 The Python CLI AI Coder uses a tool-based approach to generate project structures:
 
-<details>
-<summary><b>AI Tool System (click to expand)</b></summary>
+#### AI Tool System
 
 The `ProjectGenerator` class defines a set of tools that the AI model can call to manipulate files and directories:
 
@@ -181,13 +172,9 @@ The `ProjectGenerator` class defines a set of tools that the AI model can call t
 
 These tools are exposed to the AI model through a function-calling interface, allowing it to manipulate the filesystem in a controlled and secure manner.
 
-</details>
-
-This architecture enables the AI to generate complex project structures while maintaining security and control over the operations performed.
-
 ## How It Works
 
-<img src="https://via.placeholder.com/800x400.png?text=Python+CLI+AI+Coder+Workflow" alt="Python CLI AI Coder Workflow Diagram" width="100%">
+![Python CLI AI Coder Workflow](https://via.placeholder.com/800x400.png?text=Python+CLI+AI+Coder+Workflow)
 
 1. **Initialization** 🚀
 
