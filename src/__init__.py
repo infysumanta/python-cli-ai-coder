@@ -1,0 +1,3 @@
+"""
+Code Project Generator package.
+"""
