@@ -111,6 +111,42 @@ After generating a project, you can add new features:
   - **GitHub Actions**: Set up CI/CD workflows
   - **Documentation**: Create documentation structure and templates
 
+### Tool Calls
+
+The ProjectGenerator class defines tools that AI Coder can call:
+
+- `read_file`: Read the contents of a file
+- `get_file_metadata`: Get metadata for a file
+- `list_directory_contents`: List files and directories
+- `write_to_file`: Write content to a file
+- `create_directory`: Create a new directory
+- `run_command`: Execute a shell command
+
+## How It Works
+
+1. **Initialization**:
+
+   - The tool loads the OpenAI API key from the `.env` file
+   - It initializes the ProjectGenerator class with this key
+
+2. **User Input**:
+
+   - The CLI collects project specifications from the user
+   - Users select project type, name, description, and features
+
+3. **Project Generation**:
+
+   - The tool sends prompts to GPT-4o with project specifications
+   - GPT-4o responds with tool calls to create files and directories
+   - The tool executes these calls to build the project structure
+   - Progress is displayed in real-time
+
+4. **Feature Addition**:
+   - Users can describe features to add to the generated project
+   - The tool analyzes the project structure
+   - AI generates code to implement the feature
+   - The tool integrates the new code into the project
+
 ## 📦 Dependencies
 
 - **rich**: Enhanced terminal output with colors and formatting
