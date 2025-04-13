@@ -1,14 +1,33 @@
-# Code Project Generator
+# Python CLI AI Coder
 
-A Python tool that uses OpenAI's GPT-4o to generate complete project structures based on user specifications.
+A powerful command-line tool that leverages artificial intelligence to generate complete project structures, add new features to existing projects, and streamline your development workflow.
 
-## Project Structure
+## ✨ Features
 
-The project has been organized with a proper folder structure:
+- **Project Generation**: Create complete project structures for various frameworks and languages
+- **Smart Templates**: Choose from multiple project types (Python, JavaScript, TypeScript, React, Express, etc.)
+- **Feature Selection**: Customize your project with optional features (Git, Tests, GitHub Actions, Documentation)
+- **Interactive CLI**: User-friendly command-line interface with progress tracking and visual feedback
+- **Feature Addition**: Extend existing projects with new functionality
+- **Project Organization**: Generate well-structured projects with proper file organization
+- **Documentation**: Automatically create README files and other documentation
 
-```
-code-project-generator/
-├── .env                  # Environment variables (contains OpenAI API key)
+## 🚀 Project Types
+
+- Python
+- JavaScript
+- TypeScript
+- React + Vite + TypeScript
+- React + Vite + JavaScript
+- Express + TypeScript
+- Express + JavaScript
+- Custom (specify your own)
+
+## 📋 Project Structure
+
+```bash
+python-cli-ai-coder/
+├── .env                  # Environment variables (contains API key)
 ├── main.py               # Entry point for the application
 ├── requirements.txt      # Project dependencies
 ├── src/                  # Main source code directory
@@ -25,52 +44,88 @@ code-project-generator/
 │       └── file_operations.py     # File and directory management functions
 ```
 
-## Features
+## 🛠️ Installation
 
-- Generate complete project structures for various types of projects (MERN, Django+React, etc.)
-- Create appropriate directory structures and files with proper content
-- Generate README.md files for projects
-- Track and summarize project generation process
+1. **Clone the repository**:
 
-## Installation
-
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd code-project-generator
+   ```bash
+   git clone https://github.com/infysumanta/python-cli-ai-coder.git
+   cd python-cli-ai-coder
    ```
 
-2. Install dependencies:
+2. **Set up a virtual environment**:
+
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate  # On Unix/Mac
+   # OR
+   .venv\Scripts\activate     # On Windows
    ```
+
+3. **Install dependencies**:
+
+   ```bash
    pip install -r requirements.txt
    ```
 
-3. Create a `.env` file with your OpenAI API key:
-   ```
+4. **Create a `.env` file with your API key**:
+
+   ```env
    OPENAI_API_KEY=your_api_key_here
    ```
 
-## Usage
+## 📖 Usage
+
+### Generate a New Project
 
 Run the project generator:
 
-```
+```bash
 python main.py
 ```
 
-Follow the prompts to specify:
-- Project type (e.g., MERN Stack, Django+React)
-- Project name
-- Project description
+Follow the interactive prompts to:
+
+1. Select a project type
+2. Enter a project name
+3. Choose a directory to store the project
+4. Provide a project description
+5. Select optional features (Git, Tests, GitHub Actions, Documentation)
 
 The tool will generate a complete project structure based on your specifications.
 
-## Dependencies
+### Add Features to an Existing Project
 
-- openai: For GPT-4o API access
-- python-dotenv: For loading environment variables
-- Other supporting libraries (see requirements.txt)
+After generating a project, you can add new features:
 
-## License
+1. Select "Yes" when asked if you want to add features
+2. Describe the feature you want to add
+3. The tool will analyze your project and implement the new feature
 
-[Specify license information here]
+## ⚙️ Configuration Options
+
+- **Project Types**: Choose from predefined templates or create custom ones
+- **Project Features**:
+  - **Git**: Initialize a Git repository with appropriate .gitignore
+  - **Tests**: Add testing framework with sample tests
+  - **GitHub Actions**: Set up CI/CD workflows
+  - **Documentation**: Create documentation structure and templates
+
+## 📦 Dependencies
+
+- **rich**: Enhanced terminal output with colors and formatting
+- **openai**: AI integration for code generation
+- **python-dotenv**: Environment variable management
+- Additional supporting libraries (see requirements.txt)
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+Made with ❤️ by [Sumanta Kabiraj](https://github.com/infysumanta)
