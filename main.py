@@ -1,4 +1,5 @@
-"""Entry point for the Python CLI AI Coder.
+"""
+Entry point for the Python CLI AI Coder.
 
 This is the main entry point for the application that generates complete project
 structures based on user specifications. The tool provides an interactive CLI
@@ -12,7 +13,7 @@ Requirements:
 Before running:
     1. Make sure to activate the virtual environment:
        source .venv/bin/activate  # On Unix/Mac
-       .venv\Scripts\activate     # On Windows
+       .venv/Scripts/activate     # On Windows
 
     2. Ensure your .env file contains your OpenAI API key:
        OPENAI_API_KEY=your_api_key_here

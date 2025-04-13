@@ -130,7 +130,7 @@ def main():
         None
     """
     # Display a simpler header
-    console.print("\n[bold cyan]GPT-4o PROJECT GENERATOR[/bold cyan]")
+    console.print("\n[bold cyan]Python AI Coder[/bold cyan]")
     console.print("[dim]Create complete project structures with AI[/dim]")
     console.print("\n[yellow]Please provide the following information:[/yellow]")
 
