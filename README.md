@@ -1,9 +1,6 @@
 # Python CLI AI Coder
 
-A powerful command-line tool that leverages artificial intelligence to generate complete project structures, add new features to existing projects, and streamline your development workflow.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+A command-line tool that leverages artificial intelligence to generate complete project structures, add new features to existing projects, and streamline your development workflow.
 
 > **Python CLI AI Coder** helps developers quickly bootstrap new projects with well-structured codebases, proper configuration files, and best practices already implemented. Save hours of setup time and focus on building your application's unique features.
 
@@ -173,8 +170,6 @@ The `ProjectGenerator` class defines a set of tools that the AI model can call t
 These tools are exposed to the AI model through a function-calling interface, allowing it to manipulate the filesystem in a controlled and secure manner.
 
 ## How It Works
-
-![Python CLI AI Coder Workflow](https://via.placeholder.com/800x400.png?text=Python+CLI+AI+Coder+Workflow)
 
 1. **Initialization** 🚀
 
