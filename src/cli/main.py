@@ -489,6 +489,12 @@ def main():
     summary_filename = f"{project_name}_generation_summary.json"
     summary_filepath = os.path.join(project_folder, summary_filename)
     with console.status(f"[bold]Saving generation summary to file...[/bold]"):
+        # Ensure the directory exists before writing the file
+        summary_dir = os.path.dirname(summary_filepath)
+        if summary_dir and not os.path.exists(summary_dir):
+            console.print(f"[dim]Creating directory for summary file: {summary_dir}[/dim]")
+            os.makedirs(summary_dir, exist_ok=True)
+
         with open(summary_filepath, "w") as f:
             json.dump(result, f, indent=2)
         time.sleep(0.5)  # Brief pause for effect
